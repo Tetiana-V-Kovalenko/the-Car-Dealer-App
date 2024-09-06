@@ -1,3 +1,4 @@
+import { BtnBack } from '@/components/BtnBack';
 import { fetchVehicle } from '@/service/fetchVehicle';
 import { fetchVehicleModels } from '@/service/fetchVehicleModels';
 import { isModelArray } from '@/typeGuadrs/isModel';
@@ -29,6 +30,7 @@ export default async function Year({ params }: { params: StaticParams }) {
   }
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-[40px]  w-[90vw] mx-auto">
+      <BtnBack />
       <Suspense>
         {data.map((model) => (
           <div

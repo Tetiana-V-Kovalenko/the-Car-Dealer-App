@@ -30,15 +30,33 @@ export const FilterSections = ({ data }: { data: TVehicle[] }) => {
           If you are sure of your choice, click Next
         </div>
       )}
+
       <Link
-        href={`/results/${vehicle?.MakeId}/${year}`}
-        className={` mx-auto block w-fit  bg-blue-600 text-white text-3xl rounded hover:bg-blue-300 ${
-          !vehicle || !year ? 'opacity-30 pointer-events-none' : ' mt-[100px] '
-        }`}
-        aria-disabled={!vehicle || !year ? 'true' : 'false'}
-        tabIndex={!vehicle || !year ? -1 : undefined}
+        href={vehicle ? `/results/${vehicle?.MakeId}/${year}` : '/'}
+        className={'mx-auto block w-fit  '}
       >
-        Next
+        <div
+          className={
+            ' w-fit  bg-blue-600 text-white  rounded hover:bg-blue-300 border border-blue-700  '
+          }
+          style={{
+            padding: '14px 26px',
+            marginTop: !vehicle || !year ? '150px' : '50px ',
+            backgroundColor: !vehicle || !year ? '#93c5fd' : '#1d4ed8 ',
+            fontSize: '20px',
+            color: 'white',
+          }}
+          aria-disabled={!vehicle || !year ? 'true' : 'false'}
+          tabIndex={!vehicle || !year ? -1 : undefined}
+          onClick={(e) => {
+            if (!vehicle || !year) {
+              e.preventDefault();
+              e.stopPropagation();
+            }
+          }}
+        >
+          Next
+        </div>
       </Link>
     </>
   );
