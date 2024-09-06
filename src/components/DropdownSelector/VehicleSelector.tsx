@@ -6,8 +6,6 @@ import { DropdownSelectorProps } from './DropdownSelector';
 import { isVehicle, isVehicleArray } from '@/typeGuadrs/isVehicle';
 
 export const VehicleSelector = ({ data, onChange }: DropdownSelectorProps) => {
-  const [selectedMake, setSelectedMake] = useState<TVehicle | null>(null);
-
   if (!isVehicleArray(data)) {
     return <div>Error: Data is not valid.</div>;
   }
@@ -16,10 +14,8 @@ export const VehicleSelector = ({ data, onChange }: DropdownSelectorProps) => {
     const selectedId = parseInt(e.target.value);
     const selected = data.find((item) => item.MakeId === selectedId);
     if (isVehicle(selected)) {
-      setSelectedMake(selected);
       onChange(selected);
     } else {
-      setSelectedMake(null);
       onChange(null);
     }
   };

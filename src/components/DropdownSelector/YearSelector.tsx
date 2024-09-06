@@ -4,15 +4,13 @@ import { DropdownSelectorProps } from './DropdownSelector';
 import { isNumberArray } from '@/typeGuadrs/isNumberArr';
 
 export const YearSelector = ({ data, onChange }: DropdownSelectorProps) => {
-  const [selectedYear, setSelectedYear] = useState<number | null>(null);
-
   if (!isNumberArray(data)) {
     return <div>Error: Data is not valid.</div>;
   }
 
   const handleSelectYear = (e: ChangeEvent<HTMLSelectElement>) => {
     const selectedYear = parseInt(e.target.value);
-    setSelectedYear(selectedYear || null);
+
     onChange(selectedYear || null);
   };
 
