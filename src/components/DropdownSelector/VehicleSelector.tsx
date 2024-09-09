@@ -1,7 +1,7 @@
 'use client';
 
-import { TVehicle } from '@/types/vehicle';
-import { ChangeEvent, useState } from 'react';
+
+import { ChangeEvent } from 'react';
 import { DropdownSelectorProps } from './DropdownSelector';
 import { isVehicle, isVehicleArray } from '@/typeGuadrs/isVehicle';
 

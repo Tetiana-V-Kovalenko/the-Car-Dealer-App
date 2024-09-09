@@ -1,5 +1,5 @@
 'use client';
-import { ChangeEvent, useState } from 'react';
+import { ChangeEvent } from 'react';
 import { DropdownSelectorProps } from './DropdownSelector';
 import { isNumberArray } from '@/typeGuadrs/isNumberArr';
 
